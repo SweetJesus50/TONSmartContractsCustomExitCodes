@@ -34,7 +34,9 @@
 - `413` - all transfer attempts are rejected, because it is against SBT standart (TEP-85)
 
 # Getgems NFT Sale Contract V4R1
+- `404` - sale is completed or cancelled.
 - `4501` - Amount of tons or jettons that are sent to this contract to buy NFT must be > full_price.
 - `451` - If there's not enough value to cover the NFT full_price after deducting fees `(full_price - fee_amount - royalty_amount)` or fee_amount < 0 or royalty_amount < 0.
+- `452` - Workchain check. All messages from masterchain (wc == -1) are rejected. Workchain must be == 0. 
 
-# DRAFT...
+## DRAFT
