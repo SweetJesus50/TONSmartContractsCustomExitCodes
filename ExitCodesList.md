@@ -28,7 +28,7 @@
 - `405` - If NFT is not initialized, `init?` field is false (0) the sender of initialization message must be NFT Collection that this NFT belongs to.
 - `410` **(in nft_item_editable)** - Sender of *edit_content* message must be *editor_address*.
   
-#### SBT
+#### SBT Item Contract
 `401`, `405` error codes from NFT Item are valid for SBT.
 - `403` - SBT can be revoked only once, i.e. revoke_time must be equal to 0.
 - `413` - all transfer attempts are rejected, because it is agains SBT standart (TEP-85)
