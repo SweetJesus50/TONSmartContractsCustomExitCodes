@@ -14,7 +14,7 @@
   - ***Forward payload tip:***
     If you don't want to store forward payload, just do `.store_uint(0, 1)` and finish your cell. If you want to add forward payload (e.g. some comment or any other custom operation) and your forward payload is in the same cell, do `.store_uint(0, 1).store_...<your forward payload here>`. If your forward payload is in reference cell, do `.store_uint(1, 1).store_ref(<your forward payload cell here>)`    
 - `709` - Gas check error. Incoming TON value must be `> forward_ton_amount + fwd_count (= 1 if forward_ton_amount is 0, = 2 if foward_ton_amount > 0) * fwd_fee + (2 * 0.015 + 0.01)`.
-   - ***forward_ton_amount*** **tip:** Basically it's recommended to send value that is twice as much as *forward_ton_amount*, if it's > 0.
+   - ***forward_ton_amount*** **tip:** Basically it's recommended to send value that is twice as much as *forward_ton_amount*, if it's > 0. But be sure that your value is >= 0.04 + forward_ton_amount (0.04 TON - avg jetton transfer cost)
 - **Alternative** `709` **(not to be confused with 709 Gas check error)** - Pretty rare error, but nevertheless can occur. When *op::internal_transfer* or *op::burn_notification* are bounced (something went wrong) the tokens should be returned to *jetton_wallet* that initiated those opcodes according to the jetton logic. Any other opcodes when bounced will trigger this `709` error.
 # NFT
 #### NFT Collection Contract
