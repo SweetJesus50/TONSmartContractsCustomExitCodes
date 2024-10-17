@@ -16,7 +16,7 @@
 - `709` - Gas check error. Incoming TON value must be `> forward_ton_amount + fwd_count (= 1 if forward_ton_amount is 0, = 2 if foward_ton_amount > 0) * fwd_fee + (2 * 0.015 + 0.01)`.
    - ***forward_ton_amount*** **tip:** Basically it's recommended to send value that is twice as much as *forward_ton_amount*, if it's > 0. But be sure that your value is >= 0.04 + forward_ton_amount (0.04 TON - avg jetton transfer cost)
 - **Alternative** `709` **(not to be confused with 709 Gas check error)** - Pretty rare error, but nevertheless can occur. When *op::internal_transfer* or *op::burn_notification* are bounced (something went wrong) the tokens should be returned to *jetton_wallet* that initiated those opcodes according to the jetton logic. Any other opcodes when bounced will trigger this `709` error.
-# NFT
+# NFT & SBT
 #### NFT Collection Contract
 - `401` - Ownership check. Sender of this message must be owner (admin) of this NFT Collection.
 - `402` - Minting error. Invalid NFT item_index. NFT item_index must be <= next_item_index.
@@ -28,4 +28,7 @@
 - `405` - If NFT is not initialized, `init?` field is false (0) the sender of initialization message must be NFT Collection that this NFT belongs to.
 - `410` **(in nft_item_editable)** - Sender of *edit_content* message must be *editor_address*.
   
-# Coming soon...
+# SBT
+`401`, `405` error codes from NFT Item are valid for SBT.
+- `403` - SBT can be revoked only once, i.e. revoke_time must be equal to 0.
+- `413` - all transfer attempts are rejected, because it is agains SBT standart (TEP-85)
