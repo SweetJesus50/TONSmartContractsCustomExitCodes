@@ -4,7 +4,7 @@
 #### Jetton Master Contract
 - `73` - Ownership check. Sender of the message must be admin.
 - `74` - Sender of the *burn_notification* message must be jetton_wallet of this master contract.
-- `75` - Gas check error. Incoming TON value must be `> fwd_fee + 0.001 TON`.
+- `75` - Provide wallet address gas check error. Incoming TON value must be `> fwd_fee + 0.01 TON`.
 #### Jetton Wallet Contract
 - `705` - Ownership check. Sender of the message must be owner of this *jetton_wallet*.
 - `706` - Not enough balance. Balance on this *jetton_wallet* must be >= 0.
