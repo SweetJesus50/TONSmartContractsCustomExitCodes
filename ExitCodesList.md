@@ -31,4 +31,4 @@
 #### SBT Item Contract
 `401`, `405` error codes from NFT Item are valid for SBT.
 - `403` - SBT can be revoked only once, i.e. revoke_time must be equal to 0.
-- `413` - all transfer attempts are rejected, because it is agains SBT standart (TEP-85)
+- `413` - all transfer attempts are rejected, because it is against SBT standart (TEP-85)
